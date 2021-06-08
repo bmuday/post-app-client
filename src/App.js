@@ -24,7 +24,7 @@ const App = () => {
     };
 
     axios({
-      url: "https://post-app-deploy.herokuapp.com/api/save",
+      url: "/api/save",
       method: "POST",
       data: payload,
     })
@@ -45,7 +45,7 @@ const App = () => {
 
   const getPosts = () => {
     axios({
-      url: "https://post-app-deploy.herokuapp.com/api",
+      url: "/api",
     })
       .then((response) => {
         const data = response.data;
