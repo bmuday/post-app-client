@@ -24,7 +24,7 @@ const App = () => {
     };
 
     axios({
-      url: "/api/save",
+      url: "https://post-app-deploy.herokuapp.com/api/save",
       method: "POST",
       data: payload,
     })
@@ -45,7 +45,7 @@ const App = () => {
 
   const getPosts = () => {
     axios({
-      url: "/api",
+      url: "https://post-app-deploy.herokuapp.com/api",
     })
       .then((response) => {
         const data = response.data;
@@ -56,6 +56,7 @@ const App = () => {
       });
   };
 
+  console.log(posts);
   const displayPosts = (posts) => {
     if (!posts.length) return null;
     return posts.map((post, index) => (
