@@ -23,7 +23,20 @@ const App = () => {
       body,
     };
 
-    axios({
+    fetch("https://post-app-deploy.herokuapp.com/api/save", {
+      method: "POST",
+      body: payload,
+    })
+      .then(() => {
+        console.log("Data has been sent to the server");
+        resetUserInputs();
+        getPosts();
+      })
+      .catch(() => {
+        console.log("Internal server error");
+      });
+
+    /* axios({
       url: "https://post-app-deploy.herokuapp.com/api/save",
       method: "POST",
       data: payload,
@@ -36,15 +49,24 @@ const App = () => {
       .catch(() => {
         console.log("Internal server error");
       });
-  };
+  }; */
 
-  const resetUserInputs = () => {
-    setTitle("");
-    setBody("");
-  };
+    const resetUserInputs = () => {
+      setTitle("");
+      setBody("");
+    };
 
-  const getPosts = () => {
-    axios({
+    const getPosts = () => {
+      fetch("https://post-app-deploy.herokuapp.com/api")
+        .then((res) => {
+          const data = res.json();
+          setPosts(data);
+        })
+        .catch(() => {
+          alert("Error retrieving data!");
+        });
+    };
+    /* axios({
       url: "https://post-app-deploy.herokuapp.com/api",
     })
       .then((response) => {
@@ -53,7 +75,7 @@ const App = () => {
       })
       .catch(() => {
         alert("Error retrieving data!");
-      });
+      }); */
   };
 
   console.log(posts);
