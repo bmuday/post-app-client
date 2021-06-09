@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://post-app-deploy.herokuapp.com/",
+  "proxy": "http://104.248.234.175:5000/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,7 +10,7 @@
     "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
