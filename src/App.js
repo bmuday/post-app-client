@@ -24,7 +24,7 @@ const App = () => {
     };
 
     axios({
-      url: "/api/save",
+      url: "http://104.248.234.175:5000/api/save",
       method: "POST",
       data: payload,
     })
@@ -45,7 +45,7 @@ const App = () => {
 
   const getPosts = () => {
     axios({
-      url: "/api",
+      url: "http://104.248.234.175:5000/api",
     })
       .then((response) => {
         const data = response.data;
